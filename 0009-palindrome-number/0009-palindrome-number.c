@@ -1,8 +1,8 @@
+#define FALSE false /*Macro defination*/
 #define TRUE true
-#define FALSE false
 
 bool isPalindrome(int x) {
-    if (x < 0 || (x % 10 == 0 && x != 0)) {
+    if (x < 0 || (x % 10 == 0 && x != 0)) { /*Negetive number never become Palindrome number*/
         return FALSE;
     }
 
@@ -10,18 +10,17 @@ bool isPalindrome(int x) {
     int revnum = 0;
 
     while (x > 0) {
-
         int remnum = x % 10;
 
         if (revnum > (INT_MAX - remnum) / 10) {
-            return FALSE;
+            return false; // Overflow detected
         }
-
+        
         revnum = revnum * 10 + remnum;
         x /= 10;
     }
 
-    if (revnum == realnum) {
+    if (realnum == revnum) {
         return TRUE;
     }
 
