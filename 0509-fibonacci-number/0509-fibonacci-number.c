@@ -10,10 +10,10 @@ int fib(int n) {
     int firstTerm = 0;
     int secondTerm = 1;
 
-    for (int i = 0; i < n - 1; i++) {
-        int temp = secondTerm;
-        secondTerm = secondTerm + firstTerm;
-        firstTerm = temp;
+    for (int i = 1; i < n; i++) {
+        int thirdTerm = firstTerm + secondTerm;
+        firstTerm = secondTerm;
+        secondTerm = thirdTerm;
     }
 
     return secondTerm;
