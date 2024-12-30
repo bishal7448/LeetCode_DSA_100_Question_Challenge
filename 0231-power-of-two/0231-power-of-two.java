@@ -4,9 +4,9 @@ class Solution {
             return false;
         }
 
-        // if (n == 1) {
-        //     return true;
-        // }
+        if (n == 1) {
+            return true;
+        }
 
         if (n % 2 == 0) {
             while (n % 2 == 0) {
