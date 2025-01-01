@@ -9,6 +9,7 @@ class Solution {
         int revnum = 0;
 
         while (x > 0) {
+            
             int remnum = x % 10;
             revnum = revnum * 10 + remnum;
             x /= 10;
