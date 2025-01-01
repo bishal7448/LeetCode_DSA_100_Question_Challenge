@@ -7,32 +7,32 @@ class Solution {
         int carry = 0;
 
         while (pointer >= 0 || k > 0) {
-            int numVal = 0;
+            int lastArrVal = 0;
 
             if (pointer >= 0) {
-                numVal = num[pointer];
+                lastArrVal = num[pointer];
             }
 
-            int lastDigit = k % 10; // Last digit from k
+            int lastKDigit = k % 10; // It is last digit from k
 
-            int sum = numVal + lastDigit + carry;
+            int total = lastArrVal + lastKDigit + carry;
 
-            int digit = sum % 10;
+            int sum = total % 10;
 
-            ans.add(digit);
+            ans.add(sum);
 
-            carry = sum / 10;
+            carry = total / 10;
 
-            pointer--;
+            pointer--; // Move the pointer to left
 
-            k /= 10;
+            k /= 10; // Remove last digit from the k
         }
 
         if (carry > 0) {
-            ans.add(carry);
+            ans.add(carry); // Add extra carry to the array list
         }
 
-        Collections.reverse(ans);
+        Collections.reverse(ans); // Reverse the answer array list
 
         return ans;
     }
