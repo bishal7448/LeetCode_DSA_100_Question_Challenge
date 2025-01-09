@@ -12,7 +12,7 @@ class Solution {
                 ans[0] = start + 1;
                 ans[1] = end + 1;
 
-                return ans;
+                break;
             }else if(sum < target) {
                 start++;
             }else {
