@@ -21,7 +21,7 @@ class Solution {
                 } else if (mid != (len - 1) && nums[mid] > nums[mid + 1]) {
 
                     return nums[mid + 1];
-                } else if (nums[0] < nums[mid]) {
+                } else if (nums[start] < nums[mid]) {
                     start = mid + 1;
                 } else {
                     end = mid - 1;
