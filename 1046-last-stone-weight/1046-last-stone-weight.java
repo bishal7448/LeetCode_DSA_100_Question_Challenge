@@ -7,13 +7,14 @@ class Solution {
         }
 
         while(pq.size() > 1) {
-            int maxStone = pq.remove();
-            int prevMaxStone = pq.remove();
+            int heavStone = pq.remove();
+            int prevHeavStone = pq.remove();
 
-            int newStone = maxStone - prevMaxStone;
+            int temp = 0;
 
-            if(newStone > 0) {
-                pq.add(newStone);
+            if(heavStone > prevHeavStone) {
+                temp = heavStone - prevHeavStone;
+                pq.add(temp);
             }
         }
 
