@@ -2,8 +2,8 @@ class Solution {
     public int longestConsecutive(int[] nums) {
         HashMap<Integer, Boolean> hm = new HashMap<>();
 
-        for(int i = 0; i < nums.length; i++) {
-            hm.put(nums[i], false);
+        for(int ele : nums) {
+            hm.put(ele, false);
         }
 
         for(int key : hm.keySet()) {
@@ -12,20 +12,20 @@ class Solution {
             }
         }
 
-        int max = 0;
+        int len = 0;
 
         for(int key : hm.keySet()) {
-            int k = 1;
+            int temp = 1;
 
             if(hm.get(key) == true) {
-                while(hm.containsKey(key + k)) {
-                    k++;
+                while(hm.containsKey(key + temp) == true) {
+                    temp++;
                 }
             }
 
-            max = Math.max(max, k);
+            len = Math.max(len, temp);
         }
 
-        return max;
+        return len;
     }
 }
