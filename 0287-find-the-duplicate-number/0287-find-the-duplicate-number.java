@@ -1,7 +1,8 @@
 class Solution {
     public int findDuplicate(int[] nums) {
-        int ans = 0;
 
+        int ans = 0;
+        
         for(int i = 0; i < nums.length; i++) {
             int ele = Math.abs(nums[i]);
 
@@ -9,7 +10,6 @@ class Solution {
                 nums[ele] = -nums[ele];
             }else {
                 ans = ele;
-                break;
             }
         }
 
