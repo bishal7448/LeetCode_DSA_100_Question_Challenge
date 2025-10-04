@@ -2,8 +2,7 @@
 #define TRUE true
 
 bool isPalindrome(int x) {
-    if (x < 0 || (x % 10 == 0 &&
-                  x != 0)) { /*Negetive number never become Palindrome number*/
+    if (x < 0 || (x % 10 == 0 && x != 0)) { /*Negetive number never become Palindrome number*/
         return FALSE;
     }
 
@@ -16,7 +15,7 @@ bool isPalindrome(int x) {
         if (revnum > (INT_MAX - remnum) / 10) {
             return false; // Overflow detected
         }
-
+        
         revnum = revnum * 10 + remnum;
         x /= 10;
     }
