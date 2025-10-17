@@ -5,12 +5,12 @@ class Solution {
         }else {
             int realNum = x;
             int revNum = 0;
-
+            
             int temp = realNum;
+
             while(temp > 0) {
                 int rem = temp % 10;
-                temp = temp / 10;
-
+                temp /= 10;
                 revNum = revNum * 10 + rem;
             }
 
