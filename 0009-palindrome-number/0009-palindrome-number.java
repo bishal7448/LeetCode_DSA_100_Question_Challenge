@@ -1,17 +1,15 @@
 class Solution {
     public boolean isPalindrome(int x) {
-        if(x < 0 || (x % 10 == 0 && x != 0)) {
-            return false;
+        if(x < 0 || (x != 0 && x % 10 == 0)) {
+            return false;        
         }else {
             int realNum = x;
             int revNum = 0;
-            
-            int temp = realNum;
 
-            while(temp > 0) {
-                int rem = temp % 10;
-                temp /= 10;
-                revNum = revNum * 10 + rem;
+            while(x > 0) {
+                int temp = x % 10;
+                revNum = revNum * 10 + temp;
+                x /= 10;
             }
 
             if(realNum == revNum) {
