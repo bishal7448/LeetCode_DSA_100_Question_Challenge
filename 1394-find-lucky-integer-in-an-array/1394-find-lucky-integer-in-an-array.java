@@ -1,25 +1,18 @@
 class Solution {
     public int findLucky(int[] arr) {
-        HashMap<Integer, Integer> hm = new HashMap<> (); //Hash map function
+        HashMap<Integer, Integer> map = new HashMap<>();
 
-        for(int i = 0; i < arr.length; i++) {
-            int val = arr[i];
-
-            if(hm.containsKey(val) == true) {
-                hm.put(val, hm.get(val) + 1);
-            }else {
-                hm.put(val, 1);
-            }
+        for (int n : arr) {
+            map.put(n, map.getOrDefault(n, 0) + 1);
         }
 
-        int ans = -1;
+        int luckyInteger = -1;
 
-        for(int key : hm.keySet()) {
-            if(key == hm.get(key)) {
-                ans = key;
+        for (int key : map.keySet()) {
+            if (map.get(key) == key) {
+                luckyInteger = key; 
             }
         }
-
-        return ans;
+        return luckyInteger;  
     }
 }
