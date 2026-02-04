@@ -4,11 +4,7 @@ class Solution {
         int currSum = nums[0];
 
         for (int i = 1; i < nums.length; i++) {
-            if((currSum + nums[i]) > nums[i]) {
-                currSum += nums[i];
-            }else {
-                currSum = nums[i];
-            }
+            currSum = Math.max((currSum + nums[i]), nums[i]);
 
             maxSum = Math.max(maxSum, currSum);
         }
